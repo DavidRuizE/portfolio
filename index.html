@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Ruiz - Full-Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #60a5fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-secondary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .hero .location {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-category p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        /* Experience */
+        .experience-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-item h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-date {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .experience-item li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            background: var(--bg-secondary);
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DR</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>👋 Hi, I'm David Ruiz</h1>
+            <p class="subtitle">Full-Stack Developer · React.js Developer · Android Developer · Problem Solver</p>
+            <p class="location">📍 Medellín, Colombia</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/davidruize" target="_blank">LinkedIn</a>
+                <a href="https://github.com/DavidRuizE" target="_blank">GitHub</a>
+                <a href="mailto:david02ruiz@hotmail.com">Email</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a Full-Stack & Mobile Developer with real-world experience building production-grade applications using <strong>Next.js</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>Kotlin</strong>, and <strong>Clean Architecture</strong>.</p>
+            <p>I recently completed a software internship at <strong>Globant</strong>, where I worked on Android apps using Kotlin, Jetpack Compose, and SOLID principles.</p>
+            <p>I enjoy building clean, scalable, well-structured solutions and collaborating in fast-moving teams.</p>
+            <p><strong>I've built:</strong></p>
+            <ul style="list-style: none; padding-left: 1.5rem;">
+                <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>A production medical platform used by doctors (ARIA Salud)</li>
+                <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>A full-stack bike reservation system with real-time logic</li>
+                <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>An IMDb Android app following MVVM + Clean Architecture</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <p>Next.js · React · TypeScript · JavaScript · Tailwind CSS · React Hook Form · Zod · Zustand · Shadcn</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <p>REST APIs · Node.js · Express · Drizzle ORM · PostgreSQL · MySQL · AWS API consumption</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Mobile</h4>
+                    <p>Kotlin · Android Studio · MVVM · Retrofit · Coroutines · Jetpack Compose</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & DevOps</h4>
+                    <p>Git · GitHub · Bitbucket · Vercel · AWS · ESLint · Prettier · Agile / Scrum · Figma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+
+            <div class="project-card">
+                <h3>ARIA Salud — Medical Platform (Production)</h3>
+                <p class="project-tech">Next.js 15 · TypeScript · AWS Cognito · Tailwind</p>
+                <p>A real production healthcare platform used by doctors.</p>
+                <p><strong>Role:</strong> Lead frontend developer for:</p>
+                <ul style="list-style: none; padding-left: 1.5rem;">
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Patient management</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Consultation workflow</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Dashboard</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Cognito authentication</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Protected routes & forms</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>AWS secure API integrations</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://ariasalud.com" target="_blank">🔐 View Production (Login Required)</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Bike Reservation System — Full-Stack Web App</h3>
+                <p class="project-tech">Next.js 15 · TypeScript · Drizzle ORM · PostgreSQL · NextAuth</p>
+                <p><strong>Key features:</strong></p>
+                <ul style="list-style: none; padding-left: 1.5rem;">
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>User authentication (NextAuth)</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Admin panel</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Real-time availability</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Duplicate reservation prevention</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Typed services layer</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Clean architecture</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://prueba-tecnica-one-omega.vercel.app" target="_blank">🔗 Live Demo</a>
+                    <a href="https://github.com/DavidRuizE/bike-reservation-system" target="_blank">📂 Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>IMDb Android App — Kotlin + MVVM</h3>
+                <p class="project-tech">Kotlin · MVVM · Retrofit · Coroutines</p>
+                <p><strong>Highlights:</strong></p>
+                <ul style="list-style: none; padding-left: 1.5rem;">
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>MVVM + Repository Pattern</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Retrofit networking</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Domain/UI separation</li>
+                    <li style="position: relative; margin-bottom: 0.5rem; color: var(--text-muted);"><span style="position: absolute; left: -1.5rem; color: var(--primary);">▹</span>Poster and detail screens</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/DavidRuizE/IMDb-Android" target="_blank">📂 Repository</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <h3>Software Developer Intern – Globant</h3>
+                <p class="experience-date">June 2024 – January 2025 | Medellín, Colombia</p>
+                <ul>
+                    <li>Built Android apps using <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong></li>
+                    <li>Applied <strong>SOLID</strong> and <strong>Clean Architecture</strong></li>
+                    <li>API integration with Retrofit</li>
+                    <li>Implemented Room persistence</li>
+                    <li>Agile collaboration</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Vice-President – SERES (Social Outreach Organization)</h3>
+                <p>Led projects supporting vulnerable communities and developing student leadership.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <h3>EAFIT University — Bachelor in Computer Science</h3>
+                <p class="experience-date">2020 – 2025</p>
+                <p>Relevant coursework: Data Structures, Algorithms, Web Development, Software Engineering</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>📧 Email: <a href="mailto:david02ruiz@hotmail.com" style="color: var(--primary);">david02ruiz@hotmail.com</a></p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/davidruize" target="_blank" style="color: var(--primary);">linkedin.com/in/davidruize</a></p>
+            <p>🔗 GitHub: <a href="https://github.com/DavidRuizE" target="_blank" style="color: var(--primary);">github.com/DavidRuizE</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 David Ruiz. Built with passion and code.</p>
+        </div>
+    </footer>
+</body>
+</html>
