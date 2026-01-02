@@ -25,7 +25,7 @@ export const Hero = () => {
         <section className="relative min-h-screen flex items-center overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0">
-                <img src="/hero-bg.jpg" alt="Hero image" className="w-full h-full object-cover opacity-40" />
+                <img src="/portfolio/hero-bg.jpg" alt="Hero image" className="w-full h-full object-cover opacity-40" />
                 <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
             </div>
 
@@ -100,7 +100,7 @@ export const Hero = () => {
                         {/* img */}
                         <div className="relative max-w-md mx-auto ">
                             <div className="relative glass rounded-3xl p-2 glow-border">
-                                <img src="/profile-photo" alt="David Ruiz" className="w-full aspect-[4/5] object-cover rounded-2xl opacity-80" />
+                                <img src="/portfolio/profile-photo" alt="David Ruiz" className="w-full aspect-[4/5] object-cover rounded-2xl opacity-80" />
                                 <div className="absolute bottom-4 right-4 glass rounded-xl px-4 py-3 animate-float">
                                     <div className="flex items-center gap-3">
                                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
