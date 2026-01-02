@@ -1,7 +1,9 @@
 import { Download } from "lucide-react"
+import cvDavidRuiz from "../assets/cvDavidRuiz.pdf"
 
 export const AnimatedBorderButton = ({ children }) => {
     return (
+    <a href={cvDavidRuiz} download="David_Ruiz_CV.pdf">
     <button
       className="relative bg-transparent border border-border 
         text-foreground hover:border-primary/50 transition-all 
@@ -35,5 +37,6 @@ export const AnimatedBorderButton = ({ children }) => {
         {children}
       </span>
     </button>
+    </a>
     )
 }
