@@ -49,13 +49,13 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-... 
+                I’m a software engineer focused on building well-structured, user-oriented web applications. What started as curiosity about how digital products work turned into a strong interest in web development and the engineering decisions behind scalable, maintainable software.
               </p>
               <p>
-...
+                My main focus is frontend development using JavaScript, TypeScript, and React, where I enjoy crafting clean interfaces and writing code that is easy to understand and evolve. I also have experience working on the backend, building REST APIs, managing data, and connecting systems in a way that supports real product needs.
               </p>
               <p>
-                    Coming soon
+                Outside of day-to-day development, I spend time improving my skills, experimenting with new tools, and working on personal projects. I value clean code, thoughtful design, and continuous learning, and I’m always looking for opportunities to grow as an engineer and contribute to meaningful products.
               </p>
             </div>
 
