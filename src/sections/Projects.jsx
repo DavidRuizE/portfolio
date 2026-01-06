@@ -3,32 +3,56 @@ import { ArrowUpRight, Github } from "lucide-react"
 
 
 const projects = [
-    {
-        title: "Titulo 1 ",
-        description: "Description 1",
-        image: "portfolio/imagepath1.p",
-        tags: ["Tag1", "tag2", "tag3"],
-        link: ".com",
-        github: "github.com"
-    },
-    {
-        title: "Titulo 1 ",
-        description: "Description 1",
-        image: "portfolio/imagepath1.p",
-        tags: ["Tag1", "tag2", "tag3"],
-        link: ".com",
-        github: "github.com"
-    },
-    {
-        title: "Titulo 1 ",
-        description: "Description 1",
-        image: "portfolio/imagepath1.p",
-        tags: ["Tag1", "tag2", "tag3"],
-        link: ".com",
-        github: "github.com"
-    }
+  {
+    title: "ARIA Salud – Healthcare Platform",
+    description:
+      "Production-grade healthcare management platform used by doctors. I worked as lead frontend developer, implementing patient management, consultation workflows, dashboards, secure authentication, protected routes, and AWS API integrations.",
+    image: "portfolio/projects/aria-salud.png",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS Cognito",
+      "Healthcare",
+      "Production App"
+    ],
+    link: "https://ariasalud.com",
+    github: "" // Private repository
+  },
+  {
+    title: "Bike Reservation System",
+    description:
+      "Full-stack web application for managing bike reservations with real-time availability. Includes authentication, admin panel, CRUD operations, duplicate reservation prevention, and a clean architecture with typed services.",
+    image: "portfolio/projects/bike-reservation.png",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "NextAuth",
+      "Full Stack"
+    ],
+    link: "https://bike-reservation-app.vercel.app/",
+    github: "https://github.com/DavidRuizE/bike-reservation-system"
+  },
+  {
+    title: "IMDb Android App",
+    description:
+      "Android application that allows users to browse movies using a public API. Built following MVVM and Clean Architecture principles, with proper separation of layers, Retrofit networking, coroutines, and modern UI components.",
+    image: "portfolio/projects/imdb-android.png",
+    tags: [
+      "Kotlin",
+      "Android",
+      "MVVM",
+      "Clean Architecture",
+      "Retrofit",
+      "Mobile"
+    ],
+    link: "",
+    github: "https://github.com/DavidRuizE/IMDb-Android"
+  }
+];
 
-]
 
 export const Projects = () =>{
     return (

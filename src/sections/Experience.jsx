@@ -1,31 +1,59 @@
-const experiences =[
+const experiences = [
     {
-        period: "latest",
-        role: "Role",
-        company: "Name of the company",
-        description: "description of task done in the experience",
-        technologies: ["tech1", "Tech2", "Tech3"],
-        current: false,
+      period: "2025 – Present",
+      role: "Frontend Developer",
+      company: "ARIA Salud",
+      description:
+        "Lead frontend developer for a production healthcare platform used by doctors. Built secure authentication flows, protected routes, dashboards, and complex forms. Integrated the frontend with a private AWS backend and ensured responsive, scalable UI.",
+      abilities: [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Responsive UI Design",
+        "Authentication & Authorization",
+        "AWS Cognito",
+        "Form Validation",
+        "Secure API Integration"
+      ],
+      current: true,
     },
+    {
+    period: "Jun 2024 – Jan 2025",
+    role: "Software Developer Intern",
+    company: "Globant",
+    description:
+      "Worked on Android applications using Kotlin, contributing to both UI and business logic. Applied SOLID principles and Clean Architecture, consumed REST APIs, implemented local persistence, and collaborated with cross-functional teams in an Agile environment.",
+    abilities: [
+      "Kotlin",
+      "Java",
+      "Android Development",
+      "Jetpack Compose",
+      "REST API Consumption",
+      "Room Database",
+      "Dependency Injection (Hilt)",
+      "SOLID Principles",
+      "Agile Collaboration"
+    ],
+    current: false,
+  },
 
-    {
-        period: "latest",
-        role: "Role",
-        company: "Name of the company",
-        description: "description of task done in the experience",
-        technologies: ["tech1", "Tech2", "Tech3"],
-        current: false,
-    },
-
-    {
-        period: "latest",
-        role: "Role",
-        company: "Name of the company",
-        description: "description of task done in the experience",
-        technologies: ["tech1", "Tech2", "Tech3"],
-        current: false,
-    },
-]
+  {
+    period: "Dec 2023 – Feb 2024",
+    role: "Bilingual Support Agent",
+    company: "Solvo Global",
+    description:
+      "Provided bilingual (English/Spanish) customer support for an international airline, handling chat and call interactions. Developed strong communication, problem-solving, and multitasking skills in a fast-paced environment.",
+    abilities: [
+      "Bilingual Communication (English/Spanish)",
+      "Customer Support",
+      "Problem Solving",
+      "Time Management",
+      "Multitasking",
+      "Professional Communication"
+    ],
+    current: false,
+  },
+];
 
 export const Experience = () =>{
     return(
@@ -61,7 +89,7 @@ export const Experience = () =>{
                                     <h3 className="text-xl font-semibold mt-2">{experience.role}</h3>
                                     <p className="text-muted-foreground">{experience.company}</p>
                                     <p className="text-sm text-muted-foreground mt-4">{experience.description}</p>
-                                    <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>{experience.technologies.map((tech, techIdx) => (
+                                    <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>{experience.abilities.map((tech, techIdx) => (
                                         <span key={techIdx} className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground" >{tech}</span>
                                     ))}</div>
                                 </div>
