@@ -7,7 +7,7 @@ const projects = [
     title: "ARIA Salud – Healthcare Platform",
     description:
       "Production-grade healthcare management platform used by doctors. I worked as lead frontend developer, implementing patient management, consultation workflows, dashboards, secure authentication, protected routes, and AWS API integrations.",
-    image: "portfolio/projects/aria-salud.png",
+    image: "/projects/aria-salud.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -23,7 +23,7 @@ const projects = [
     title: "Bike Reservation System",
     description:
       "Full-stack web application for managing bike reservations with real-time availability. Includes authentication, admin panel, CRUD operations, duplicate reservation prevention, and a clean architecture with typed services.",
-    image: "portfolio/projects/bike-reservation.png",
+    image: "/projects/bike-reservation.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -39,7 +39,7 @@ const projects = [
     title: "IMDb Android App",
     description:
       "Android application that allows users to browse movies using a public API. Built following MVVM and Clean Architecture principles, with proper separation of layers, Retrofit networking, coroutines, and modern UI components.",
-    image: "portfolio/projects/imdb-android.png",
+    image: "/projects/imdb-android.png",
     tags: [
       "Kotlin",
       "Android",
