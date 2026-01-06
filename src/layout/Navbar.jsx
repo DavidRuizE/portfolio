@@ -43,8 +43,8 @@ export const Navbar = () => {
 
                 {/* CTA */}
                 <div className="hidden md:block">
-                    <Button size="sm">
-                        Contact Me
+                    <Button size="sm" asChild>
+                        <a href="#contact">Contact Me</a>
                     </Button>
                 </div>
 
@@ -62,8 +62,8 @@ export const Navbar = () => {
                         <a href={link.href} onClick={() => setIsMobileMenuOpen(false)} key={index} className="text-lg text-muted-foreground hover:text-foreground py-2">
                             {link.label}
                         </a>))}
-                    <Button onClick={() => setIsMobileMenuOpen(false)}>
-                        Contact Me
+                    <Button onClick={() => setIsMobileMenuOpen(false)} asChild>
+                        <a href="#contact">Contact Me</a>
                     </Button>
                 </div>
             </div>
